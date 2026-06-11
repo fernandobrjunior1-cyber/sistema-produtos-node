@@ -1,0 +1,52 @@
+<h1>Area Privada</h1>
+
+<a href="/products/create">
+    + Novo Produto
+</a>
+
+<hr>
+
+{{#if products.length}}
+
+<div class="products-container">
+
+    {{#each products}}
+
+    <div class="product-card">
+
+        <h2>{{this.name}}</h2>
+
+        <p>Preço: R$ {{this.price}}</p>
+
+        {{#if this.image}}
+            <img 
+                src="/uploads/{{this.image}}" 
+                alt="{{this.name}}" 
+                width="200">
+        {{/if}}
+
+        <br>
+
+        <a href="/products/update/{{this._id}}">
+            Editar
+        </a>
+
+        <form 
+            action="/products/delete/{{this._id}}?_method=DELETE" 
+            method="POST">
+            <button type="submit">
+                Excluir
+            </button>
+        </form>
+
+    </div>
+
+    {{/each}}
+
+</div>
+
+{{else}}
+
+<p>Você ainda não cadastrou nenhum produto.</p>
+
+{{/if}}

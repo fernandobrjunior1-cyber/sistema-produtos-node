@@ -1,0 +1,33 @@
+<h1>Meu Perfil</h1>
+
+<div class="profile-container">
+
+    <div class="profile-image">
+        {{#if user.image}}
+            <img 
+                src="/uploads/{{user.image}}"
+                alt="{{user.name}}">
+        {{else}}
+            <p>Sem foto de perfil</p>
+        {{/if}}
+    </div>
+
+    <div class="profile-info">
+        <p><strong>Nome:</strong> {{user.name}}</p>
+
+        <p><strong>Email:</strong> {{user.email}}</p>
+
+        <a href="/profile/edit">
+            Editar Perfil
+        </a>
+
+        <form action="/profile/delete" method="POST">
+
+    <button type="submit">
+        🗑️ Excluir minha conta
+    </button>
+
+</form>
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+<h1>Novo Produto</h1>
+
+<form
+    action="/products/create/save"
+    method="POST"
+    enctype="multipart/form-data"
+>
+
+    <div>
+        <label>Nome:</label>
+        <input
+            type="text"
+            name="name"
+            required
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label>Preço:</label>
+        <input
+            type="number"
+            step="0.01"
+            name="price"
+            required
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label>Imagem:</label>
+        <input
+            type="file"
+            name="image"
+            accept="image/*"
+        >
+    </div>
+
+    <br>
+
+    <button type="submit">
+        Salvar
+    </button>
+
+</form>

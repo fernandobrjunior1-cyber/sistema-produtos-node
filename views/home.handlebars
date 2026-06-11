@@ -1,0 +1,44 @@
+<div class="home-container">
+
+    <h1>Bem-vindo ao Sistema de Produtos</h1>
+
+    <p>
+        Gerencie seus produtos de forma simples e rápida.
+    </p>
+
+    <div class="home-actions" style="margin-bottom: 80px;">
+
+        <a href="/products" class="btn-neon">
+            📦 Ver Produtos
+        </a>
+
+        <a href="/products/create" class="btn-neon">
+            ➕ Cadastrar Produto
+        </a>
+
+    </div>
+
+</div>
+
+<nav>
+
+    <a href="/">🏠 Home</a>
+    <a href="/products">📦 Produtos</a>
+
+    {{#if username}}
+        <a href="/products/create">➕ Novo Produto</a>
+
+        <span class="user-info">
+            👤 {{username}}
+        </span>
+
+        <a href="/logout" class="logout-btn">
+            🚪 Sair
+        </a>
+
+    {{else}}
+        <a href="/login">🔐 Login</a>
+        <a href="/register">👤 Cadastro</a>
+    {{/if}}
+
+</nav>

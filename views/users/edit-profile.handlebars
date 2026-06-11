@@ -1,0 +1,48 @@
+<h1>Editar Perfil</h1>
+
+<form 
+    action="/profile/edit" 
+    method="POST"
+    enctype="multipart/form-data"
+>
+
+    <label>Nome</label>
+    <input
+        type="text"
+        name="name"
+        value="{{user.name}}"
+    >
+
+    <label>Email</label>
+    <input
+        type="email"
+        name="email"
+        value="{{user.email}}"
+    >
+
+    <h3>Alterar senha</h3>
+
+    <label>Nova senha</label>
+    <input
+        type="password"
+        name="password"
+    >
+
+    <label>Confirmar nova senha</label>
+    <input
+        type="password"
+        name="confirmpassword"
+    >
+
+    <label>Foto de Perfil</label>
+
+    <input
+        type="file"
+        name="image"
+    >
+
+    <button type="submit">
+        Salvar
+    </button>
+
+</form>

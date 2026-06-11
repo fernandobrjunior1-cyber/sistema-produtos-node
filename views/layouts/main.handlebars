@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Produtos</title>
+</head>
+<body>
+
+   {{#if username}}
+
+<div class="user-menu">
+
+    <a href="/dashboard">
+        Área Privada
+    </a>
+
+    <a href="/profile" class="profile-link">
+
+        {{#if userImage}}
+
+        <img
+            src="/uploads/{{userImage}}"
+            alt="{{username}}"
+            class="avatar-small">
+
+        {{else}}
+
+        👤
+
+        {{/if}}
+
+        {{username}}
+
+    </a>
+
+    <a href="/logout">
+        🚪 Sair
+    </a>
+
+</div>
+
+{{/if}}
+
+    {{#if success_msg}}
+    <div class="success">
+        {{success_msg}}
+    </div>
+{{/if}}
+
+{{#if error_msg}}
+    <div class="error">
+        {{error_msg}}
+    </div>
+{{/if}}
+
+   <nav>
+
+    <a href="/">
+        🏠 Home
+    </a>
+
+    <a href="/products">
+        📦 Produtos
+    </a>
+
+
+    {{#if username}}
+
+        <a href="/products/create">
+            ➕ Novo Produto
+        </a>
+
+    {{else}}
+
+        <a href="/login">
+            🔐 Login
+        </a>
+
+        <a href="/register">
+            👤 Cadastro
+        </a>
+
+    {{/if}}
+
+</nav>
+    <hr>
+
+    {{{body}}}
+
+</body>
+</html>

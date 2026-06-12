@@ -1,23 +1,16 @@
 // Importa o Model de usuário responsável pela coleção "users" no MongoDB
 const User = require('../models/User');
-
 // Importa a biblioteca bcrypt para criptografar e comparar senhas
 const bcrypt = require('bcryptjs');
-
 // Importa o Model de produtos para manipular os produtos do usuário
 const Product = require('../models/Product');
-
 // Módulo nativo do Node.js para manipulação de arquivos
 const fs = require('fs');
-
 // Módulo nativo do Node.js usado para trabalhar com caminhos de arquivos
 const path = require('path');
 
-
 // Exporta a classe responsável pelas ações relacionadas aos usuários
 module.exports = class UserController {
-
-
     // ==================================================
     // EXIBE A PÁGINA DE CADASTRO DE USUÁRIO
     // ==================================================
@@ -42,8 +35,6 @@ module.exports = class UserController {
     // CADASTRA UM NOVO USUÁRIO
     // ==================================================
     static async register(req, res) {
-
-
         // Desestrutura os dados enviados pelo formulário
         // req.body contém os campos enviados via POST
         const {
@@ -52,11 +43,8 @@ module.exports = class UserController {
             password,
             confirmpassword
         } = req.body;
-
-
         // Verifica se o nome foi preenchido
         if (!name) {
-
             // Cria uma mensagem temporária de erro
             req.flash(
                 'error_msg',

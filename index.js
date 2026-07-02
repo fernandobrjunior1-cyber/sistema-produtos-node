@@ -1,6 +1,5 @@
 // Importa o framework Express, responsável por criar o servidor web
 const express = require('express');
-
 // Importa o Handlebars, que será utilizado como mecanismo de templates (Views)
 const exphbs = require('express-handlebars');
 
@@ -29,6 +28,11 @@ const UserRoutes = require('./routes/UserRoutes');
 
 // Importa as rotas relacionadas aos produtos
 const ProductRoutes = require('./routes/ProductRoutes');
+
+const Product = require ('./models/Product')
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./swagger');
 
 
 // Cria a aplicação Express
@@ -194,6 +198,16 @@ app.use('/', UserRoutes);
 // Rotas específicas de produtos
 // Exemplo: /products/create, /products/edit/:id
 app.use('/products', ProductRoutes);
+const ApiRoutes =
+    require('./routes/ApiRoutes');
+
+app.use('/api', ApiRoutes);
+
+app.use(
+    '/api-docs',
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec)
+);
 
 
 // ==================================================

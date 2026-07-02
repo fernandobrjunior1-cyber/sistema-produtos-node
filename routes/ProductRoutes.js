@@ -10,7 +10,7 @@ router.get('/products', productController.showProducts);
 router.get('/create',checkAuth, productController.createProduct);
 router.post('/create/save',checkAuth,imageUpload.single('image'),productController.createProductSave);
 router.get('/update/:id',checkAuth, productController.ProductUpdate);
-router.post('/update/save/:id',checkAuth, productController.ProductUpdateSave);
+router.post('/update/save/:id',checkAuth,imageUpload.single('image'), productController.ProductUpdateSave);
 router.post('/delete/:id',checkAuth, productController.ProductDelete);
 router.get('/dashboard',checkAuth, productController.dashboard);
 

@@ -1,8 +1,9 @@
 <h1>Editar Produto</h1>
 
-<form
- <form action="/products/update/save/{{product._id}}
- " method="POST" enctype="multipart/form-data"> 
+<form 
+    action="/products/update/save/{{product._id}}"
+    method="POST"
+    enctype="multipart/form-data"
 >
 
     <div>
@@ -32,11 +33,24 @@
 
     <div>
         <label>Imagem do Produto:</label>
-        
+
         {{#if product.image}}
             <div style="margin-bottom: 10px;">
-                <p style="font-size: 14px; color: #aaa;">Imagem atual:</p>
-                <img src="/uploads/{{product.image}}" alt="Preview" style="width: 100px; height: 100px; object-fit: cover; border: 1px solid #00ffff; border-radius: 8px;">
+                <p style="font-size: 14px; color: #aaa;">
+                    Imagem atual:
+                </p>
+
+                <img
+                    src="/uploads/{{product.image}}"
+                    alt="Preview"
+                    style="
+                        width: 100px;
+                        height: 100px;
+                        object-fit: cover;
+                        border: 1px solid #00ffff;
+                        border-radius: 8px;
+                    "
+                >
             </div>
         {{/if}}
 

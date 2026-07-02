@@ -116,7 +116,12 @@ module.exports = class ProductController {
 
     // Salva as alterações feitas em um produto
     static async ProductUpdateSave(req, res) {
+    
 
+    console.log('BODY:', req.body);
+    console.log('FILE:', req.file);
+
+    
         // Captura o ID do produto enviado pela URL
         const id = req.params.id;
 
@@ -204,5 +209,7 @@ module.exports = class ProductController {
             products
         });
     }
+
+    
 
 };
